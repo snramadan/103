@@ -1,0 +1,18 @@
+Saba Ramadan
+
+Iterations O(1)push O(1)pop	O(N)push	O(N)pop
+-------------------------------------------------------
+1N	    578ns    152ns	4741ns		4416ns
+2N	    370ns    79ns	6807ns		5372ns
+4N	    289ns    84ns	4636ns		3737ns
+8N	    257ns    63ns	5389ns		3871ns
+16N	    74ns     51ns	6970ns		5689ns
+32N	    122ns    38ns	10907ns		10031ns
+64N	    121ns    31ns	19644ns		18011ns
+--------------------------------------------------------
+
+	These findings have shown that, up until 32n is reached, the O(1) performance for push went down with each increase to the iterations, then something occurs in 32n and 64n that causes it to increase slightly compared to 16n. The O(1) performance for pop follows a comtinuous decrease with each iteration increase. However, the O(N) performance for both push and pop has a steady increase in time with each increase in iteration. Its interesting to see that the increase in time between 16N and 32N is about double the time. This hows how much a difference in time it takes to perform something in O(1) as compared to O(N), which proves to take an exceeding larger amount of time. 
+
+	Some problems that I ran into was initially creating the the push/pop methods in BadStack. While going through the array to shift the elements, I made the mistake of overriding the elements at the specified index, thus creating the same value for each position. Ifound putting a temp position holder helped fix that problem. Also while creating the performance tests, I initially believed just popping the values whould be the only thing needed to test pop but the values needed to be pushed in before being able to pop them out. 
+
+        Overall these results further support the theorertical Bog-O analysis.
